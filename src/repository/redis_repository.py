@@ -16,3 +16,10 @@ class RedisRepository:
 
     def get_hash(self, key: str, value: str) -> any:
         return self.__redis_conn.hget(key, value).decode("utf-8")
+
+    def insert_ex(self, key: str, value: any, ex: int) -> None:
+        self.__redis_conn.set(key, value, ex=ex)
+
+    def insert_hash_ex(self, key: str, field: str, value: any, ex: int) -> None:
+        self.__redis_conn.hset(key, field, value)
+        self.__redis_conn.expire(key, ex)
