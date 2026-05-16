@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis in Python/venv/bin/python3" "$0" "$@"
-' '''
+#!/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis-com-Python/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

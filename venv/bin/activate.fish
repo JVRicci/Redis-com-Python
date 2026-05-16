@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis in Python/venv'
+set -gx VIRTUAL_ENV /media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis-com-Python/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

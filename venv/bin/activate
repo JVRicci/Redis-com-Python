@@ -39,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath '/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis in Python/venv')
+    export VIRTUAL_ENV=$(cygpath /media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis-com-Python/venv)
 else
     # use the path as-is
-    export VIRTUAL_ENV='/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis in Python/venv'
+    export VIRTUAL_ENV=/media/jvvsricci/10625AD5625ABEE2/Repositorio/Python/Redis-com-Python/venv
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"
