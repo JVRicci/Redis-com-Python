@@ -62,3 +62,24 @@ class InsertHashWithExpiration(Strategy):
 
         redis_repository.insert_hash_with_expiration(key, field, value, expiration)
         return f"O field {field} da key {key} foi inserido com o valor {value} e expiração de {expiration} segundos."
+
+
+class DeleteKey(Strategy):
+    def execute(self, redis_repository):
+        key = input("Insira uma key:")
+        redis_repository.delete(key)
+        return f"A key {key} foi deletada."
+
+
+class DeleteHash(Strategy):
+    def execute(self, redis_repository):
+        key = input("Insira uma key:")
+        field = input("Insira um field:")
+        redis_repository.delete_hash(key, field)
+        return f"O field {field} da key {key} foi deletado."
+
+
+class ReturnAllKeys(Strategy):
+    def execute(self, redis_repository):
+        keys = redis_repository.return_all_keys()
+        return f"As keys armazenadas são: {keys}"

@@ -8,6 +8,9 @@ from src.repository.strategy import (
     GetHashMap,
     InsertWithExpiration,
     InsertHashWithExpiration,
+    DeleteKey,
+    DeleteHash,
+    ReturnAllKeys,
 )
 
 redis_conn = RedisConnectionHandle().set_conn()
@@ -22,6 +25,9 @@ if __name__ == "__main__":
         4: GetHashMap(),
         5: InsertWithExpiration(),
         6: InsertHashWithExpiration(),
+        7: DeleteKey(),
+        8: DeleteHash(),
+        9: ReturnAllKeys(),
     }
 
     menu = """Escolha uma opção:
@@ -31,6 +37,9 @@ if __name__ == "__main__":
 4 - Obter valor de um hash
 5 - Registrar valor com expiração
 6 - Registrar valor em hash com expiração
+7 - Deletar chave
+8 - Deletar hash
+9 - Retornar todas as chaves
 
 Opção: """
 
