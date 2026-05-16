@@ -40,3 +40,40 @@ class TestRedisClient:
 
         # Then
         assert Redis.get(key) is None
+
+    def test_set_a_new_hash_and_get_it(self):
+        # given
+        key = "test_hash"
+        value = {"field": "test_value", "field2": "test_value2"}
+
+        # when
+        Redis.insert_hash(key, value)
+
+        # then
+        assert Redis.get_hash(key, "field") == "test_value"
+        assert Redis.get_hash(key, "field2") == "test_value2"
+
+    def test_update_a_hash_and_get_it(self):
+        # given
+        key = "test_hash"
+        field = "field"
+        value = "updated_value"
+        previous_value = Redis.get_hash(key, field)
+
+        # when
+        Redis.insert_hash(key, {field: value})
+
+        # then
+        assert Redis.get_hash(key, field) == value
+        assert Redis.get_hash(key, field) != previous_value
+
+    def test_delete_a_hash_and_get_it(self):
+        # given
+        key = "test_hash"
+        field = "field"
+
+        # when
+        Redis.delete_hash(key, field)
+
+        # then
+        assert Redis.get_hash(key, field) is None
